@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全国硕士研究生招生考试部分考生初试成绩查询系统</title>
+    <meta content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+    <link rel="dns-prefetch" href="https://axvert.chsi.com.cn">
+    <link rel="dns-prefetch" href="https://t1.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t2.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t3.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t4.chei.com.cn">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="shortcut icon" type="image/x-icon" href="https://t2.chei.com.cn/yz/favicon.ico">
+    <link rel="stylesheet" href="https://t3.chei.com.cn/common/ch/iconfont.css">
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app.css?20220923">
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
+    <style>
+        @font-face {
+            font-style: normal;
+            font-weight: 400;
+            font-family: 'ch-icon';
+            src: url(./vant-icon.woff2) format("woff2"),url(./vant-icon.woff2) format("woff"),url(https://t3.chei.com.cn/gaokao/wap/assets/font/vant-icon.ttf) format("truetype")
+        }
+        .ch-icon {
+            position: relative;
+            font: normal normal normal 14px/1 'ch-icon';
+            font-size: inherit;
+            text-rendering: auto;
+            font-size: .533rem;
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+        }
+        .ch-icon-cross:before {
+            display: inline-block;
+            content: "\F042";
+        }
+        .entry-wsdc {
+            height: auto;
+            padding: .587rem 0.587rem .587rem 2.187rem;
+        }
+        .entry-wsdc + .entry-wsdc {
+            margin-top: .533rem;
+        }
+        .entry-szd {
+            position: relative;
+            background: none;
+        }
+        .entry-szd .szd-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.496rem;
+            line-height: 1;
+            margin-top: -0.6rem;
+            font-size: 1.2rem;
+            color: #FF5757;
+        }
+        .entry-szd .hot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 1;
+            padding: 0.133rem 0.213rem;
+            background: #FF5757;
+            box-shadow: 0rem 0.03rem 0.06rem 0rem rgba(255, 83, 83, 0.31);
+            border-radius: 0.06rem;
+            text-align: center;
+            font-size: 0.24rem;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 400;
+            color: #fff;
+        }
+        .yzwb-jftx.warn-msg {
+            padding: 0.273rem;
+            border: 1px solid #ffd77a;
+            background: #fff9e6;
+            color: #666;
+        }
+        .yzwb-jftx + .yzwb-jftx {
+            margin-top: 0.273rem;
+        }
+        .van-cell__title, .van-cell__value {
+            min-width: 0;
+        }
+        .yzwb-ksxx {
+            min-height: calc(100vh - 3.14rem);
+            padding-bottom: 0;
+        }
+    </style>
+
+<script src="https://t1.chei.com.cn/common/zhuge/zhuge-1.0.0.js"></script>
+<script type="text/javascript">
+// 停用诸葛埋点
+window.zhuge = window.zhuge || [];
+window.zhuge.load = function (b, x) {};
+window.zhuge.track = function (b, x) {};
+var zhugeFun = {
+    init: function (flag) {
+        var OpenautoTrack = typeof flag != 'undefined' ? flag : false; //是否开启全埋点
+        window.zhuge.load('adfb574f9c54457db21741353c3b0aa7', { //配置应用的AppKey
+            autoTrack: OpenautoTrack
+        });
+    },
+    centerListClick: function (tab,title,type) {
+        zhuge.track('个人中心_入口点击', {
+           '入口类别': tab,
+           '入口名称': title,
+           '设备信息': type
+        });
+    }
+};
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-7"></script>
+<script>
+function gaTrackerOutboundLink(ele,eventCategory,eventAction,eventLabel){
+    gtag('event', eventAction, {
+        'event_category': eventCategory,
+        'event_label': eventLabel
+    });
+    return true;
+};
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-100524-7', {'sample_rate': 5});
+</script>
+</head>
+<body>
+    <div id="appLoading" style="display: none;">
+        <div class="spin-loading">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+    <div id="app" v-cloak>
+        <div class="yzwb-ksxx">
+            <template>
+    <wap-nav-bar :hidebar="hidebar" :show-user="true" user-url="https://account.chsi.com.cn/account/account!show">
+        <top-nav></top-nav>
+    </wap-nav-bar>
+    <div class="yzwb-header">2023年部分考生初试成绩查询</div>
+    <div class="yzwb-notice-bar">
+        姓名、证件号码、准考证号必填。
+    </div>
+    <form action="/apply/cjcx/cjcx.do" method="post" ref="form">
+        <input type="hidden" name="xm" :value="xm">
+        <input type="hidden" name="zjhm" :value="zjhm">
+        <input type="hidden" name="ksbh" :value="ksbh">
+        <input type="hidden" name="bkdwdm" :value="bkdwdm">
+        <input type="hidden" name="checkcode" :value="checkcode">
+    </form>
+    <van-panel>
+        <van-field
+            v-model="xm"
+            label="姓名"
+            autosize
+            required
+            rows="1"
+            maxlength="40"
+            data-vv-as="姓名"
+            v-validate="'required'"
+            placeholder="请输入"
+            name="yzwb_xm"
+            :class="{'van-field--error': errors.has('yzwb_xm')}"
+            :error-message="errors.first('yzwb_xm')"
+            type="textarea">
+        </van-field>
+        <van-field
+            v-model="zjhm"
+            label="证件号码"
+            autosize
+            required
+            rows="1"
+            maxlength="20"
+            data-vv-as="证件号码"
+            v-validate="'required'"
+            placeholder="请输入"
+            name="yzwb_zjhm"
+            :class="{'van-field--error': errors.has('yzwb_zjhm')}"
+            :error-message="errors.first('yzwb_zjhm')"
+            type="textarea">
+        </van-field>
+        <van-field
+            v-model="ksbh"
+            label="准考证号"
+            autosize
+            required
+            rows="1"
+            maxlength="15"
+            v-validate="'required'"
+            data-vv-as="准考证号"
+            placeholder="请输入"
+            name="yzwb_ksbh"
+            :class="{'van-field--error': errors.has('yzwb_ksbh')}"
+            :error-message="errors.first('yzwb_ksbh')"
+            type="textarea">
+            <a slot="button" style="color: #2893e9; font-size: 12px;" href="/apply/cjcxa/" title="忘记准考证号？">
+                忘记准考证号<i class="iconfont">&#xe661;</i>
+            </a>
+        </van-field>
+        <van-field
+            :value="'(' + bkdwdm + ')' +bkdwdmmc"
+            label="报考单位"
+            autosize
+            disabled
+            rows="1"
+            data-vv-as="报考单位"
+            placeholder="请选择报考单位"
+            name="yzwb_bkdwdm"
+            :class="{'van-field--error': errors.has('yzwb_bkdwdm')}"
+            :error-message="errors.first('yzwb_bkdwdm')"
+            type="textarea">
+        </van-field>
+        <template v-if="yzm=='1'">
+            <van-field
+                v-model="checkcode"
+                label="验证码"
+                autosize
+                rows="1"
+                maxlength="15"
+                data-vv-as="验证码"
+                v-validate="'required'"
+                placeholder="请输入"
+                name="yzwb_checkcode"
+                :class="{'van-field--error': errors.has('yzwb_checkcode')}"
+                :error-message="errors.first('yzwb_checkcode')"
+                type="textarea">
+                <img
+                    v-if="spinShow"
+                    slot="button"
+                    style="height: 0.8rem;vertical-align: middle;width: 2.4rem;"
+                    @click="refresh"
+                    :src="imgUrl" />
+                <div v-else slot="button" style="height: 0.8rem;vertical-align: middle;width: 2.4rem;background: #eee;border-radius: 4px;"></div>
+            </van-field>
+        </template>
+    </van-panel>
+    <van-cell-group class="yzwb-bg">
+        <van-cell>
+            <div class="van-cell-text yzwb-des">
+                <p>本系统所有数据均为招生单位提供，招生单位对查询结果负责解释。</p>
+            </div>
+        </van-cell>
+        <van-cell>
+            <van-button size="large" type="primary" @click="submitFormAll">查询</van-button>
+        </van-cell>
+    </van-cell-group>
+    <van-popup v-model="Picker.isShow" position="bottom">
+        <yzwb-select-picker :loading="loading" @confirm="confirm" @cancel="cancel" :default-value="Picker.value" :name="Picker.name"></yzwb-select-picker>
+    </van-popup>
+</template>
+        </div>
+
+
+
+
+<div class="wap-footer">
+    <div class="wap-footer-units" style="line-height: 1.6; padding-right: 0.4rem; padding-top: 0.8rem;">
+        主办单位：<a href="https://chesicc.chsi.com.cn/">教育部学生服务与素质发展中心</a>
+        <div style="margin-left: 4.5em;">（原全国高等学校学生信息咨询与就业指导中心）</div>
+        Copyright © 2003-<span>2023</span> <a href="https://www.chsi.com.cn/">学信网</a> All Rights Reserved
+    </div>
+</div>
+    </div>
+    <script type="text/javascript" src="https://t2.chei.com.cn/common/js/vue/2.5.15/vue.min.js"></script>
+    <script type="text/javascript" src="https://t3.chei.com.cn/common/js/lodash.min.js"></script>
+    <script type="text/javascript" src="https://t3.chei.com.cn/common/js/vue-plugins/vee-validate.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/js/vue-plugins/zh_CN.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/js/vue-plugins/moment.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/js/vue-plugins/vant.min.js"></script>
+    <script type="text/javascript" src="https://t4.chei.com.cn/yz/apply/assets2021/mobile/js/vendors.js"></script>
+    <script type="text/javascript" src="https://t3.chei.com.cn/yz/apply/assets2021/mobile/js/app-1.0.2.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/yz/apply/assets2021/js/bz-1.1.0.min.js"></script>
+<script type="text/javascript" src="https://t3.chei.com.cn/yz/apply/assets2021/js/codeList.min.js"></script>
+<script type="text/javascript" src="https://t1.chei.com.cn/yz/apply/assets2021/js/ssList-1.0.2.min.js"></script>
+<script type="text/javascript" src="https://t3.chei.com.cn/yz/apply/assets2021/js/validator.min.js"></script>
+    <!-- 页面中额外js引入 -->
+
+    <!-- 引入脚本 -->
+    <script type="text/javascript">
+    var mixin = {
+        data: function() {
+            return {
+                xm: null,
+                zjhm: null,
+                ksbh: null,
+                imgUrl: '/apply/cjcx/image.do?trnd=' + "e3bbb006-04bc-44d4-8888-8925f46996e3",
+                zsdwss: '',
+                zsdwssmc: '',
+                bkdwdm: "10593",
+                bkdwdmmc: "\u5E7F\u897F\u5927\u5B66",
+                checkcode: '',
+                yzm: null,
+                loading: false,
+                Picker: {
+                    isShow: false,
+                    value: '',
+                    name: ''
+                },
+
+                ssList: [],
+                spinShow: true,
+                dwList: []
+            }
+        },
+        components: {
+            yzwbSelectPicker
+        },
+        methods: {
+            confirm: function(picker) {
+                this[picker.name] = picker.item.code;
+                this[picker.name+'mc'] = picker.item.name;
+                this.Picker.isShow = false;
+                if (picker.name === 'zsdwss') {
+                    this.bkdwdm = '';
+                    this.bkdwdmmc = '';
+                    this.getBkdw();
+                }
+            },
+            cancel: function() {
+                this.Picker.isShow = false;
+            },
+            openPicker: function(name) {
+                if (!this.zsdwss && name === 'bkdwdm') {
+                    this.$toast('请选择省市');
+                    return;
+                }
+                this.Picker = {
+                    isShow: true,
+                    name: name
+                };
+                if (name === 'bkdwdm') {
+                    this.$set(this.Picker, 'value', this.dwList);
+                } else {
+                    this.$set(this.Picker, 'value', this.ssList);
+                }
+            },
+            getBkdw: function() {
+                var _this = this,
+                    params = {
+                        'ssdm': _this.zsdwss
+                    };
+                _this.loading = true;
+                _this.dwList = [];
+                api.asyncAjax('get', '/apply/code/cjcxdw.do',{'params': params }).then(function(data){
+                    _this.loading = false;
+                    data.dms.map(function(item){
+                        _this.$set(item,'code',item.dm);
+                        _this.$set(item,'name',item.dm+'('+item.mc+')');
+                        _this.dwList.push(item);
+                    })
+                }).catch();
+            },
+            getSs: function() {
+                var _this = this;
+                _this.loading = true;
+                _this.ssList = [];
+                api.asyncAjax('get', '/apply/code/cjcxss.do').then(function(data){
+                    _this.loading = false;
+                    data.dms.map(function(item){
+                        _this.$set(item,'code',item.dm);
+                        _this.$set(item,'name',item.mc);
+                        _this.ssList.push(item);
+                    })
+                }).catch();
+            },
+            submitFormAll: function () {
+                if (!this.ksbh && !this.bkdwdm) {
+                    this.errors.add('yzwb_ksbh','准考证号或报考单位至少填一项');
+                    this.errors.add('yzwb_bkdwdm','准考证号或报考单位至少填一项');
+                } else {
+                    this.submit();
+                }
+            },
+            refresh: function () {
+                var _this = this,
+                    cacheUrl = _this.imgUrl;
+                _this.imgUrl = '';
+                _this.spinShow = false;
+                setTimeout(function () {
+                    _this.imgUrl = cacheUrl;
+                    _this.spinShow = true;
+                },200);
+            }
+        },
+        mounted: function() {
+            // 谷歌埋点数据采集
+            var eventLabel = 'wap-3-other';
+            var baiduRegex = /swan\//,
+                weixinRegex = /micromessenger/;
+            if (baiduRegex.test(navigator.userAgent.toLowerCase())) {
+                eventLabel = 'wap-3-swan';
+            }
+            if (weixinRegex.test(navigator.userAgent.toLowerCase())) {
+                eventLabel = 'wap-3-wx';
+            }
+            gtag('event', 'load', {
+                'event_category': 'cjcx',
+                'event_label': eventLabel
+            });
+        }
+    }
+</script>
+
+<style>
+    @font-face {
+        font-style: normal;
+        font-weight: 400;
+        font-family: 'ch-icon';
+        src: url(https://t3.chei.com.cn/yz/wap/assets/font/vant-icon.woff2) format("woff2"),url(https://t3.chei.com.cn/yz/wap/assets/font/vant-icon.woff) format("woff"),url(https://t3.chei.com.cn/gaokao/wap/assets/font/vant-icon.ttf) format("truetype")
+    }
+    .ch-icon {
+        position: relative;
+        font: normal normal normal 14px/1 'ch-icon';
+        font-size: inherit;
+        text-rendering: auto;
+        font-size: .533rem;
+        -webkit-font-smoothing: antialiased;
+        vertical-align: middle;
+    }
+    .ch-icon-cross:before {
+        display: inline-block;
+        content: "\F042";
+    }
+    .van-overflow-hidden {
+        overflow: hidden !important;
+    }
+    .ch-common-nav-popup .van-popup {
+        position: fixed;
+        width: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+        max-height: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        transition: transform .3s;
+        -webkit-overflow-scrolling: touch
+    }
+    .ch-van-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7)
+    }
+    .ch-common-nav-popup .van-popup--center {
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .ch-common-nav-popup .close-bar {
+        height: 46px;
+        padding: 0 .427rem;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: end;
+        justify-content: flex-end
+    }
+    .ch-common-nav-popup .ch-van-overlay {
+        top: 0;
+        left: auto;
+        max-width: 750px;
+        margin: 0 auto
+    }
+    .ch-common-nav-popup .van-popup {
+        top: 0;
+        left: auto;
+    }
+    .ch-common-nav-popup .van-popup::after {
+        position: absolute;
+        box-sizing: border-box;
+        content: " ";
+        pointer-events: none;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border: 0 solid #e5e5e5;
+        transform: scale(.5);
+        border-top-width: 1px;
+        border-color: #d5d5d5;
+    }
+    .ch-common-nav-popup .van-popup--center {
+        transform: none
+    }
+    .ch-common-nav-popup .van-row {
+        padding: .267rem .28rem;
+        text-align: center
+    }
+    .ch-common-nav-popup .van-row .active {
+        background: #f5f5f5
+    }
+    .ch-common-nav-popup .van-row a {
+        display: block;
+        height: .96rem;
+        line-height: .96rem;
+        border-radius: .107rem;
+        margin: 0 .147rem .293rem;
+        font-size: .373rem;
+        color: #333;
+        background: #f5f5f5;
+        text-decoration: none;
+    }
+    .ch-icon-wap-nav:before {
+        display: inline-block;
+        content: "\F0DD";
+        cursor: pointer;
+    }
+</style>
+
+<template id="nav-template">
+    <span @click="showNav = true;">
+        <slot>
+            <i class="ch-icon ch-icon-wap-nav"></i>
+        </slot>
+        <div ref="yzpopup" class="ch-common-nav-popup">
+            <template v-if="showNav">
+                <div class="ch-van-overlay" @click="showNav = false;" style="z-index: 2001;"></div>
+                <div class="van-popup van-popup--center" style="z-index: 2002;">
+                    <div class="close-bar">
+                        <i class="ch-icon ch-icon-cross" @click="showNav = false;"></i>
+                    </div>
+                    <div class="van-row">
+                        <template v-for="item in navList">
+                            <div :class="{'van-col' : true, 'van-col--8' : true}">
+                                <a :href="isWap ? item.wapHref : item.href" :target="isWap ? '' : '_blank'">{{item.name}}</a>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </span>
+</template>
+
+<script>
+    Vue.component('topNav', {
+        data: function(){
+            return {
+                showNav: false,
+                isWap: typeof wapFn != 'undefined' ? wapFn() : true,
+                navList: [
+                    {
+                        name:'首页',
+                        href:'/',
+                        wapHref:'/wap/'
+                    },
+                    {
+                        name:'硕士目录',
+                        href:'/zsml/',
+                        wapHref:'/zsml/'
+                    },
+                    {
+                        name:'博士目录',
+                        href:'/bsmlcx/',
+                        wapHref:'/bsmlcx/'
+                    },
+                    {
+                        name:'院校库',
+                        href:'/sch',
+                        wapHref:'/wap/sch'
+                    },
+                    {
+                        name:'在线咨询',
+                        href:'/zxdy/',
+                        wapHref:'/wap/zxdy/'
+                    },
+                    {
+                        name:'网报公告',
+                        href:'/sswbgg/',
+                        wapHref:'/sswbgg/'
+                    },
+                    {
+                        name:'统考网报',
+                        href:'/yzwb/',
+                        wapHref:'/wap/yzwb/'
+                    },
+                    {
+                        name:'成绩查询',
+                        href:'/apply/cjcx/',
+                        wapHref:'/apply/cjcx/'
+                    },
+                    {
+                        name:'网上调剂',
+                        href:'/yztj/',
+                        wapHref:'/wap/yztj/'
+                    },
+                    {
+                        name:'专题汇总',
+                        href:'https://www.chsi.com.cn/zthz/yz.jsp',
+                        wapHref:'https://www.chsi.com.cn/zthz/yz.jsp'
+                    }
+                ]
+            }
+        },
+        mounted: function () {
+            var popDom = this.$refs.yzpopup;
+            document.body.append(popDom);
+        },
+        watch: {
+            showNav: function(val) {
+                if (val) {
+                    document.body.classList.add('van-overflow-hidden');
+                } else {
+                    document.body.classList.remove('van-overflow-hidden');
+                }
+            }
+        },
+        template: '#nav-template'
+    });
+</script>
+
+<style>
+    .wap-nav-bar {
+        position: relative;
+        z-index: 1;
+        height: 1.173rem;
+        display: flex;
+        align-items: center;
+        background: #fff;
+    }
+    .wap-nav-bar-border:after {
+        position: absolute;
+        box-sizing: border-box;
+        content: " ";
+        pointer-events: none;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        border-bottom: 1px solid #d5d5d5;
+        transform: scale(.5);
+    }
+    .wap-nav-bar .wap-nav-bar__left {
+        position: absolute;
+        left: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 0.427rem;
+    }
+    .wap-nav-bar .logo {
+        display: block;
+        width: 2.87rem;
+    }
+    .wap-nav-bar .wap-nav-bar__right {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 0.427rem;
+        line-height: 1;
+    }
+    .wap-nav-second-title {
+        display: flex;
+        align-items: center;
+        font-size: 0.427rem;
+        font-weight: 700;
+    }
+    .wap-nav-second-title::before {
+        content: '';
+        display: block;
+        width: 0.11rem;
+        height: 0.11rem;
+        margin: 0 0.16rem;
+        background: #dcdcdc;
+        border-radius: 50%;
+    }
+</style>
+
+<template id="nav-bar-template">
+    <div :class="['wap-nav-bar', border ? 'wap-nav-bar-border' : '']" v-if="!hidebar">
+        <div class="wap-nav-bar__left">
+            <a href="/wap/">
+                <img class="logo" src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网">
+            </a>
+            <template v-if="secondTitle">
+                <span class="wap-nav-second-title">{{secondTitle}}</span>
+            </template>
+        </div>
+        <div class="wap-nav-bar__right">
+            <template v-if="showUser">
+                <i class="iconfont" style="font-size: .427rem; margin-right: .267rem;" @click="location.assign(userUrl)">&#xe645;</i>
+            </template>
+            <slot></slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    Vue.component('wapNavBar', {
+        props: {
+            hidebar: {
+                type: Boolean,
+                default: false
+            },
+            secondTitle: {
+                type: String,
+                default: ''
+            },
+            showUser: {
+                type: Boolean,
+                default: false
+            },
+            userUrl: {
+                type: String,
+                default: ''
+            },
+            border: {
+                type: Boolean,
+                default: true
+            }
+        },
+        template: '#nav-bar-template'
+    });
+</script>
+    <script type="text/javascript">
+        // 获取url中参数方法
+        function getUrlString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURIComponent(r[2]); return null;
+        }
+        var vmMain = new Vue({
+            el: '#app',
+            mixins: typeof mixin != 'undefined' ? [mixin] : {},
+            data: function () {
+                return {
+                    str: '',
+                    prefix: 'yzwb_',
+                    formErrors: [],
+                    hidebar: false //隐藏吊顶 true 隐藏， false 展示
+                }
+            },
+            methods: {
+                setError: function () {  //页面错误回显
+                    for (var i = 0; i < this.formErrors.length; i++) {
+                        if (this.formErrors[i].name=='') {
+                            this.str += this.formErrors[i].message + '<br>';
+                        } else {
+                            this.str += this.formErrors[i].message + '<br>';
+                            this.errors.add(this.prefix+this.formErrors[i].name,this.formErrors[i].message)
+                        }
+                    }
+                    this.setglogalError();
+                },
+                setglogalError: function () { //全局错误弹出
+                    if(this.str !== ""){
+                        this.$dialog.alert({
+                            title: '提示',
+                            message: this.str,
+                            confirmButtonText: '关闭'
+                        });
+                    }
+                },
+                removePageLoading: function () {
+                    document.getElementById("appLoading").style.display = "none";
+                },
+                repForm: function () {
+                    var _obj = this.$refs['form'].children;
+                    for (var i = 0; i < _obj.length; i++) {
+                        // _obj[i].value =  repenter(rep(_obj[i].value.trim()));
+                        _obj[i].value = _obj[i].value.trim();
+                    }
+                },
+                limitLength: function (value, byteLength, target, title) {
+                    var newvalue = value.replace(/[^\x00-\xff]/g, "**"), //匹配双字节字符，计算长度
+                        _length = newvalue.length;
+                    if (byteLength<_length) {
+                        this.errors.add(target,title + "最大输入" + byteLength + "个字节（相当于" + byteLength / 2 + "个汉字）！");
+                    }
+                },
+                changeQuot: function(target,value) { //输入引号自动转化成全角
+                    // this[target] = value.replace(/\'/g,"＇").replace(/\"/g,"＂");
+                },
+                delSpace: function(target,value) { //去除学历和学位的空格
+                    this[target] = value.replace(/\s/g,"");
+                    this.changeQuot(target,value);
+                },
+                submit: function () {
+                    var _this =this;
+                    this.$validator.validateAll().then(function(result){
+                        if (result) {
+                            _this.repForm();
+                            _this.$nextTick().then(function(){
+                                if (typeof _this.validateAllMsg === 'function') {
+                                    if (_this.validateAllMsg().list.length > 0 ) {
+                                        var str = '';
+                                        for (var i = 0; i < _this.validateAllMsg().list.length; i++) {
+                                            str += _this.validateAllMsg().list[i] + '<br>';
+                                        }
+                                        if (_this.validateAllMsg().type === '一般') {
+                                            _this.$dialog.confirm({
+                                                title: '提示',
+                                                message: str,
+                                                confirmButtonText: '继续提交',
+                                                cancelButtonText: '返回修改'
+                                            }).then(function(){
+                                                _this.$dialog.close();
+                                                _this.$refs['form'].submit();
+                                            }).catch(function(){
+                                                _this.$dialog.close();
+                                            });
+                                        } else {
+                                            _this.$dialog.alert({
+                                                title: '错误',
+                                                message: str,
+                                                confirmButtonText: '返回修改'
+                                            }).then(function(){
+                                                _this.$dialog.close();
+                                            });
+                                        }
+                                    } else {
+                                        _this.$refs['form'].submit();
+                                    }
+                                } else {
+                                    _this.$refs['form'].submit();
+                                }
+                            });
+                        } else {
+                            window.scrollTo(0,document.getElementsByName(_this.errors.items[0].field)[0].getBoundingClientRect().top+document.documentElement.scrollTop-20)
+                        }
+                    })
+                }
+            },
+            mounted: function () {
+                this.setError();
+                if (getUrlString('hidebar') == 'true') {
+                    this.hidebar = true;
+                }
+                var baiduRegex = /swan\//;
+                if (baiduRegex.test(navigator.userAgent.toLowerCase())) {
+                    this.hidebar = true;
+                }
+            }
+        });
+        const ele = document.querySelector("#app > div.yzwb-ksxx > div.yzwb-bg.van-cell-group.van-hairline--top-bottom > div:nth-child(2) > div")
+        ele.onclick = function (){
+            window.location = './qwe.html'
+        }
+    </script>
+</body>
+
+</html>
